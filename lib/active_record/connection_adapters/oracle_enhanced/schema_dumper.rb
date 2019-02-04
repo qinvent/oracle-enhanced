@@ -29,6 +29,8 @@ module ActiveRecord #:nodoc:
         # do not include materialized views in schema dump - they should be created separately after schema creation
         sorted_tables = (@connection.tables - @connection.materialized_views).sort
         sorted_tables.each do |tbl|
+          # make table names upcase to fix schema dump
+          tbl.upcase!
           # add table prefix or suffix for schema_migrations
           next if ignore_table? tbl
           # change table name inspect method
