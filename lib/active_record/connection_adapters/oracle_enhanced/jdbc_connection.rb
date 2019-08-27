@@ -136,6 +136,11 @@ module ActiveRecord
           properties.put("internal_logon", privilege) if privilege
           properties.put("oracle.net.CONNECT_TIMEOUT", connect_timeout) if connect_timeout
           properties.put("oracle.jdbc.ReadTimeout", read_timeout) if read_timeout
+          properties.put("validationQuery", 'select 1 from dual') # survive connection closure
+
+          # p "========= debug properties ============"
+          # p properties
+          # p "========= debug properties ============"
 
           begin
             @raw_connection = java.sql.DriverManager.getConnection(url, properties)
