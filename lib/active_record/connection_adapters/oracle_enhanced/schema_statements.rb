@@ -690,7 +690,7 @@ module ActiveRecord
             # This method will be removed since sequence will not be created separately
             seq_name = options[:sequence_name] || default_sequence_name(table_name)
             seq_start_value = options[:sequence_start_value] || default_sequence_start_value
-            execute "CREATE SEQUENCE #{quote_table_name(seq_name)} START WITH #{seq_start_value}"
+            execute "CREATE SEQUENCE #{quote_table_name(seq_name)} START WITH #{seq_start_value} ORDER"
           end
 
           def rebuild_primary_key_index_to_default_tablespace(table_name, options)

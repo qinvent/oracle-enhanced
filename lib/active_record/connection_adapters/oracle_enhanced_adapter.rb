@@ -494,7 +494,7 @@ module ActiveRecord
           SQL
 
           execute "DROP SEQUENCE #{quote_table_name(sequence_name)}"
-          execute "CREATE SEQUENCE #{quote_table_name(sequence_name)} START WITH #{new_start_value}"
+          execute "CREATE SEQUENCE #{quote_table_name(sequence_name)} START WITH #{new_start_value} ORDER"
         end
       end
 
