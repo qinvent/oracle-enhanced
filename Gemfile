@@ -16,7 +16,7 @@ group :development do
   gem "ruby-plsql", github: "rsim/ruby-plsql", branch: "master"
 
   platforms :ruby do
-    # gem "ruby-oci8",    github: "kubo/ruby-oci8"
+    gem "ruby-oci8",    github: "kubo/ruby-oci8"
     gem "byebug"
   end
 

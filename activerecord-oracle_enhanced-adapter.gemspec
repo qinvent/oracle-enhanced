@@ -26,13 +26,9 @@ This adapter is superset of original ActiveRecord Oracle adapter.
   s.test_files = Dir["spec/**/*"]
   s.add_runtime_dependency("activerecord", ["~> 7.0.0"])
   s.add_runtime_dependency("ruby-plsql", [">= 0.6.0"])
-  puts RUBY_PLATFORM
-  puts '============================'
-  puts /java/.match?(RUBY_PLATFORM)
-  puts '============================'
   if /java/.match?(RUBY_PLATFORM)
     s.platform = Gem::Platform.new("java")
   else
-    # s.add_runtime_dependency("ruby-oci8")
+    s.add_runtime_dependency("ruby-oci8")
   end
 end
