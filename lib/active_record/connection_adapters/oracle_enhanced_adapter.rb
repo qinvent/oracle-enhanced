@@ -847,8 +847,9 @@ module ActiveRecord
   autoload :OracleEnhancedProcedures, "active_record/connection_adapters/oracle_enhanced/procedures"
 end
 
-# Workaround for https://github.com/jruby/jruby/issues/6267
-if RUBY_ENGINE == "jruby"
+# Workaround for https://github.com/jruby/jruby/issues/6267.
+# JRuby 10 no longer exposes the internal WeakMap field used by this patch.
+if RUBY_ENGINE == "jruby" && Gem::Version.new(JRUBY_VERSION) < Gem::Version.new("10.0.0.0")
   require "jruby"
 
   class org.jruby::RubyObjectSpace::WeakMap
