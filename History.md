@@ -1,3 +1,9 @@
+## 8.0.0 / 2026-05-25
+
+* Changes and bug fixes
+  * Support Rails 8.0
+  * Relax activerecord dependency to >= 7.2.0, < 9
+
 ## 7.2.0.rc1 / 2025-06-18
 
 * Changes and bug fixes
